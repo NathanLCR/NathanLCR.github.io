@@ -11,7 +11,6 @@ body {
   background: linear-gradient(to bottom right, #6d5d8e, #8c98b6);
   background-repeat: unset;
   background-size: cover;
-  display: flex;
   flex-direction: column;
 }
 .card {
@@ -39,7 +38,7 @@ nav div {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 30px 60px;
+  padding: 15px 30px;
 }
 .about nav h1 {
   font-size: 50px;
@@ -51,7 +50,9 @@ nav div {
   justify-content: end;
 }
 .about-content {
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 10px;
   height: 200px;
   margin: 100px auto;
   display: flex;
@@ -60,6 +61,9 @@ nav div {
   justify-content: center;
   color: #6d5d8e;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.about-content p {
+  text-align: center;
 }
 
 .loading-line {
@@ -89,8 +93,19 @@ nav div {
   padding-top: 32px;
   padding-bottom: 32px;
   border-top: 1px solid black;
+  display: flex;
+  flex-direction: column;
 }
 
 .skill h2 {
   font-size: 35px;
+  margin-bottom: 20px;
+}
+@media (min-width: 600px) {
+  .skill {
+    flex-direction: row;
+  }
+  .about nav {
+    padding: 30px 60px;
+  }
 }
