@@ -1,74 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nathan Lucio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="style2.css" />
-  </head>
-  <body>
-    <div class="loading-line" id="loading-line"></div>
-    <div class="card about">
-      <nav>
-        <h1>NL</h1>
-        <div>
-          <a href="https://github.com/NathanLCR" target="_blank"
-            ><img src="Assets/github-icon.png" alt="" class="img-nav"
-          /></a>
-          <a
-            href="https://www.linkedin.com/in/nathan-rocha-446b5b185/"
-            target="_blank"
-            ><img src="Assets/linkedin-icon.png" alt="" class="img-nav"
-          /></a>
-          <a href="mailto:nathan.lucio13@gmail.com" target="_blank"
-            ><img src="Assets/gmail-icon.png" alt="" class="img-nav"
-          /></a>
+
+<head>
+  <title>Nathan Lúcio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+  <nav>
+
+    <a href="#top" id="logo">
+      N
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#aboutMe" id="linkAboutMe">About</a></li>
+      <li><a href="#resume" id="linkResume">Resume</a></li>
+      <li><a href="#contact" id="linkContact">Contact</a></li>
+      <li><a href="https://github.com/nathanlcr" id="linkGithub" target="_blank">Github</a></li>
+      <li><a href="https://www.linkedin.com/in/nathan-rocha-446b5b185/" id="linkLinkedIn" target="_blank">LinkedIn</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+  <div id="top">
+    <div id="nameDiv">
+      <h2 id="helloh2" data-aos-anchor="#top" data-aos-anchor-placment="top-center" data-aos-delay="150"
+        data-aos="fade-up">Hello! My name is </h2>
+      <h1 id="nameh1" data-aos-anchor="#top" data-aos-anchor-placment="top-center" data-aos-delay="300"
+        data-aos="fade-up">
+        Nathan Lúcio.</h1>
+      <h2 id="seh2" data-aos-anchor="#top" data-aos-anchor-placment="top-center" data-aos-delay="450"
+        data-aos="fade-up">
+        I'm a fullstack software engineer.</h2>
+    </div>
+  </div>
+
+  <div class="informations">
+    <div class="informationsTitle" data-aos="fade-up" id="aboutMe">
+      <h1>About Me</h1>
+    </div>
+
+    <div class="informationsMain">
+      <p data-aos="fade-up" id="pIntro">
+        Hello! I'm Nathan Lúcio, a passionate Fullstack Developer with extensive experience in building robust web applications. With a Bachelor's degree in Information Systems and over 4 years of professional experience, I thrive in crafting efficient and scalable solutions.
+      </p>
+    </div>
+  </div>
+
+  <div class="informations">
+    <div class="informationsTitle" data-aos="fade-up">
+      <h1>Technical Expertise</h1>
+    </div>
+
+    <div class="informationsMain">
+      <p data-aos="fade-up">
+        Java Spring: Over 4 years of hands-on experience developing backend services and RESTful APIs. <br/>
+        Kotlin Spring: Proficient in building modern, concise applications using Kotlin with Spring Boot for over 2 years. <br>
+        Angular: Extensive knowledge of Angular for frontend development, honed over 2 years. <br>
+        React: Experience in developing dynamic and responsive user interfaces with React for over a year. <br>
+        Thymeleaf and JSP: Skilled in server-side templating technologies, including Thymeleaf and JSP, for over 2 years. <br>
+      </p>
+    </div>
+  </div>
+
+  <div class="informations">
+    <div class="informationsTitle" data-aos="fade-up">
+      <h1>Professional Background</h1>
+    </div>
+
+    <div class="informationsMain">
+      <p data-aos="fade-up">
+        My journey includes contributing to critical projects with prestigious organizations such as the Brazilian Army and Banco do Brasil, the largest bank in Brazil. This experience has equipped me with the ability to deliver high-quality software solutions that meet stringent requirements and security standards.
+      </p>
+    </div>
+  </div>
+
+  <div class="informations">
+    <div class="informationsTitle" data-aos="fade-up">
+      <h1>Language Skills</h1>
+    </div>
+
+    <div class="informationsMain">
+      <p data-aos="fade-up">
+        I am fluent in Portuguese and proficient in English, enabling me to collaborate effectively with diverse teams and stakeholders worldwide.
+      </p>
+    </div>
+  </div>
+
+  <div class="informations">
+    <div class="informationsTitle" data-aos="fade-up">
+      <h1>Why Work With Me?</h1>
+    </div>
+
+    <div class="informationsMain">
+      <p data-aos="fade-up">
+        I am committed to staying updated with the latest technologies and best practices in software development. My goal is to leverage my skills and experience to deliver exceptional results and exceed expectations.
+      </p>
+    </div>
+  </div>
+
+  <div id="skillsDiv">
+    <div id="techTitle" data-aos="fade-up">
+      <h3>Technologies I've Worked With</h3>
+    </div>
+    <div id="skillsMain">
+      <div class="techDiv" id="frontend" data-aos="fade-up">
+        <div class="techDivTitle">
+          Frontend
         </div>
-      </nav>
-      <div class="about-content">
-        <h1>
-          Hi, my name is Nathan
-        </h1>
-        <p>
-          <br />I'm an newbie front-end developer, information system student at
-          3rd period.
-        </p>
+        <div class="tech tooltip">
+          <img src="/assets/tech/reactlogo2.png" alt="React" />
+          <span class="tooltiptext">React</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/angularlogo.png" alt="React" />
+          <span class="tooltiptext">Angular</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/htmllogo.png" alt="HTML" />
+          <span class="tooltiptext">HTML</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/csslogo.png" alt="CSS" />
+          <span class="tooltiptext">CSS</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/jquery.png" alt="jQuery" />
+          <span class="tooltiptext">jQuery</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/bootstraplogo.png" alt="Bootstrap" />
+          <span class="tooltiptext">Bootstrap</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/expo.png" alt="Expo">
+          <span class="tooltiptext">Expo</span>
+        </div>
+      </div>
+
+      <div class="techDiv" id="backend" data-aos="fade-up">
+        <div class="techDivTitle">
+          Backend
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/springlogo.png" alt="Node.js" />
+          <span class="tooltiptext">Spring</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/nodelogo.png" alt="Node.js" />
+          <span class="tooltiptext">Node.js</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/expresslogo2.png" alt="Express" />
+          <span class="tooltiptext">Express</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/sequelize.png" alt="Sequelize" />
+          <span class="tooltiptext">Sequelize</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/oraclelogo.png" alt="PostgreSQL" />
+          <span class="tooltiptext">Oracle SQL</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/postgreslogo.png" alt="PostgreSQL" />
+          <span class="tooltiptext">PostgreSQL</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/oauth.png" alt="OAuth" />
+          <span class="tooltiptext">OAuth</span>
+        </div>
+      </div>
+
+      <div class="techDiv" id="devops" data-aos="fade-up">
+        <div class="techDivTitle">
+          DevOps
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/gitlogo.png" alt="Git" />
+          <span class="tooltiptext">Git</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/githublogo.png" alt="Github" />
+          <span class="tooltiptext">Github</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/dockerlogo.png" alt="Git" />
+          <span class="tooltiptext">Docker</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/npm.png" alt="npm" />
+          <span class="tooltiptext">npm</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/jenkinslogo.png" alt="Webpack" />
+          <span class="tooltiptext">Jenkins</span>
+        </div>
+      </div>
+
+      <div class="techDiv" id="languages" data-aos="fade-up">
+        <div class="techDivTitle">
+          Languages
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/jslogo.png" alt="JavaScript" />
+          <span class="tooltiptext">JavaScript</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/java.png" alt="Java" />
+          <span class="tooltiptext">Java</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/kotlinlogo.png" alt="JavaScript" />
+          <span class="tooltiptext">Kotlin</span>
+        </div>
+      </div>
+
+      <div class="techDiv" id="tools" data-aos="fade-up">
+        <div class="techDivTitle">
+          Tools
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/intellijlogo.png" alt="intellig" />
+          <span class="tooltiptext">IntelliJ</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/vscode.png" alt="VS Code" />
+          <span class="tooltiptext">VS Code</span>
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/postman.png" alt="Postman" />
+          <span class="tooltiptext">Postman</span>
+        </div>
+      </div>
+
+      <div class="techDiv" id="testing" data-aos="fade-up">
+        <div class="techDivTitle">
+          Testing
+        </div>
+        <div class="tech tooltip">
+          <img src="/assets/tech/junitlogo.png" alt="JUnit" />
+          <span class="tooltiptext">JUnit</span>
+        </div>
       </div>
     </div>
-    <div class="card skills">
-      <h1>Skills</h1>
-      <div class="skill">
-        <h2>Html,Css</h2>
-        <div class="progress-container">
-          <h4>Basic</h4>
-          <div class="progress">
-            <div class="progress-bar"><div></div></div>
-          </div>
-          <h4>Expert</h4>
-        </div>
-      </div>
-      <div class="skill">
-        <h2>React</h2>
-        <div class="progress-container">
-          <h4>Basic</h4>
-          <div class="progress">
-            <div class="progress-bar"><div></div></div>
-          </div>
-          <h4>Expert</h4>
-        </div>
-      </div>
-      <div class="skill">
-        <h2>Node</h2>
-        <div class="progress-container">
-          <h4>Basic</h4>
-          <div class="progress">
-            <div class="progress-bar"><div></div></div>
-          </div>
-          <h4>Expert</h4>
-        </div>
-      </div>
+  </div>
+
+  <div id="resume">
+    <div id="resumeTitle" data-aos="fade-up">
+      <h1>Resume</h1>
     </div>
-  </body>
-  <script src="index.js"></script>
+    <div id="resumeMain" data-aos="fade-up">
+      <a id="resumeView" href="/assets/nathanrocharesumee.pdf" target="_blank">View Resume
+        <img src="/assets/viewfile.png" />
+      </a>
+      <a id="resumeDownload" href="/assets/nathanrocharesumee.pdf" download>Download Resume
+        <img src="/assets/download.png" />
+      </a>
+    </div>
+
+  </div>
+  <div id="contact">
+    <div id="contactTitle" data-aos="fade-up">
+      <h1>Contact</h1>
+      <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" data-aos="fade-up">
+        <div class="hidden">
+          <label>Fill this if you are not human: <input name="bot-field" /></label>
+        </div>
+        <div class="group">
+          <input type="text" name="name" required="required" /><span class="highlight"></span><span class="bar"></span>
+          <label>Name</label>
+        </div>
+        <div class="group">
+          <input type="text" name="email" required="required" /><span class="highlight"></span><span class="bar"></span>
+          <label>Email</label>
+        </div>
+        <div class="group">
+          <textarea type="textarea" name="message" rows="5" required="required"></textarea><span
+            class="highlight"></span><span class="bar"></span>
+          <label>Message</label>
+        </div>
+        <div class="btn-box">
+          <button class="btn btn-submit" type="submit">Send Message<img src="assets/paper-plane.png"></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div id="footer-links">
+      <a href="mailto:nathanrochadev@gmail.com"
+        onmouseover="this.href=this.href.replace(/[zyx]/g,'');" target="_blank">
+        <img src="assets/email.png">
+      </a>
+      <a href="https://www.linkedin.com/in/nathan-rocha-446b5b185/" target="_blank">
+        <img src="assets/linkedin.png">
+      </a>
+      <a href="https://github.com/nathanlcr" target="_blank">
+        <img src="assets/github3.png">
+      </a>
+    </div>
+    <div id="copyright">&#169; <span id="year"></span> Nathan Lúcio. All rights reserved.</div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script type="text/javascript" src="/main.js"></script>
+
+</body>
+
 </html>
