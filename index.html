@@ -1,325 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Nathan Lúcio</title>
+  <title>Nathan Lúcio — Backend Engineer</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Nathan Lúcio — Backend Software Engineer specialising in Java, Kotlin and Spring Boot. Based in Dublin, Ireland.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="manifest" href="/site.webmanifest">
 </head>
-
 <body>
-  <nav>
 
-    <a href="#top" id="logo">
-      N
+  <!-- NAV -->
+  <nav>
+    <a href="#top" id="logo" aria-label="Nathan Lúcio — home">
+      <!-- NL mark: N (bars + diagonal), L (vertical + horizontal base) -->
+      <svg viewBox="0 0 84 88" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- N: left bar -->
+        <path d="M5,11 L16,11 L16,79 L5,79 Z"   fill="var(--bg)" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter"/>
+        <!-- N: diagonal (\) from top-right of left bar to bottom-left of right bar -->
+        <path d="M16,11 L27,11 L37,79 L26,79 Z"  fill="var(--bg)" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter"/>
+        <!-- N: right bar -->
+        <path d="M37,11 L48,11 L48,79 L37,79 Z"  fill="var(--bg)" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter"/>
+        <!-- N: inner echo lines -->
+        <path d="M7,14 L14,14 L14,76 L7,76 Z"    fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+        <path d="M18,14 L25,14 L35,76 L28,76 Z"  fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+        <path d="M39,14 L46,14 L46,76 L39,76 Z"  fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+        <!-- L: vertical bar (4px taller than N) -->
+        <path d="M54,5 L65,5 L65,79 L54,79 Z"    fill="var(--bg)" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter"/>
+        <!-- L: horizontal base -->
+        <path d="M54,70 L79,70 L79,79 L54,79 Z"  fill="var(--bg)" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter"/>
+        <!-- L: inner echo lines -->
+        <path d="M56,8 L63,8 L63,76 L56,76 Z"    fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+        <path d="M56,72 L77,72 L77,76 L56,76 Z"  fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+      </svg>
     </a>
 
     <ul class="nav-links">
-      <li><a href="#aboutMe" id="linkAboutMe">About</a></li>
-      <li><a href="#resume" id="linkResume">Resume</a></li>
-      <li><a href="#contact" id="linkContact">Contact</a></li>
-      <li><a href="https://github.com/nathanlcr" id="linkGithub" target="_blank">Github</a></li>
-      <li><a href="https://www.linkedin.com/in/nathan-rocha-446b5b185/" id="linkLinkedIn" target="_blank">LinkedIn</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://github.com/nathanlcr" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/nathanlcr" target="_blank" rel="noopener">LinkedIn</a></li>
     </ul>
-    <div class="burger">
+
+    <div class="burger" aria-label="Toggle navigation" role="button" tabindex="0">
       <div class="line1"></div>
       <div class="line2"></div>
       <div class="line3"></div>
     </div>
   </nav>
-  <div id="top">
-    <div id="nameDiv">
-      <h2 id="helloh2" data-aos-anchor="#top" data-aos-anchor-placment="top-center" data-aos-delay="150"
-        data-aos="fade-up">Hello! My name is </h2>
-      <h1 id="nameh1" data-aos-anchor="#top" data-aos-anchor-placment="top-center" data-aos-delay="300"
-        data-aos="fade-up">
-        Nathan Lúcio.</h1>
-      <h2 id="seh2" data-aos-anchor="#top" data-aos-anchor-placment="top-center" data-aos-delay="450"
-        data-aos="fade-up">
-        I'm a fullstack software engineer.</h2>
-    </div>
-  </div>
 
-  <div class="informations">
-    <div class="informationsTitle" data-aos="fade-up" id="aboutMe">
-      <h1>About Me</h1>
-    </div>
+  <!-- HERO -->
+  <section id="top">
+    <div id="hero-content">
 
-    <div class="informationsMain">
-      <p data-aos="fade-up" id="pIntro">
-        Hello! I'm Nathan Lúcio, a passionate Fullstack Developer with extensive experience in building robust web applications. With a Bachelor's degree in Information Systems and over 4 years of professional experience, I thrive in crafting efficient and scalable solutions.
+      <div id="hero-logo">
+        <svg id="hero-svg" viewBox="0 0 84 88" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- N: left bar -->
+          <path class="nl-draw" pathLength="1" d="M5,11 L16,11 L16,79 L5,79 Z"
+            fill="var(--bg)" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter"/>
+          <!-- N: diagonal -->
+          <path class="nl-draw" pathLength="1" d="M16,11 L27,11 L37,79 L26,79 Z"
+            fill="var(--bg)" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter"
+            style="animation-delay:.14s"/>
+          <!-- N: right bar -->
+          <path class="nl-draw" pathLength="1" d="M37,11 L48,11 L48,79 L37,79 Z"
+            fill="var(--bg)" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter"
+            style="animation-delay:.28s"/>
+          <!-- N: inner echoes -->
+          <path class="nl-echo" d="M7,14 L14,14 L14,76 L7,76 Z"   fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+          <path class="nl-echo" d="M18,14 L25,14 L35,76 L28,76 Z" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+          <path class="nl-echo" d="M39,14 L46,14 L46,76 L39,76 Z" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+          <!-- L: vertical bar -->
+          <path class="nl-draw" pathLength="1" d="M54,5 L65,5 L65,79 L54,79 Z"
+            fill="var(--bg)" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter"
+            style="animation-delay:.42s"/>
+          <!-- L: horizontal base -->
+          <path class="nl-draw" pathLength="1" d="M54,70 L79,70 L79,79 L54,79 Z"
+            fill="var(--bg)" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter"
+            style="animation-delay:.56s"/>
+          <!-- L: inner echoes -->
+          <path class="nl-echo" d="M56,8 L63,8 L63,76 L56,76 Z"   fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+          <path class="nl-echo" d="M56,72 L77,72 L77,76 L56,76 Z" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+        </svg>
+
+        <div class="hero-wordmark">
+          <span class="hero-name">NATHAN LÚCIO</span>
+          <span class="hero-role">
+            <span class="hr-line"></span>
+            <span id="scramble-target">ENGINEER</span>
+            <span class="hr-line"></span>
+          </span>
+        </div>
+      </div>
+
+      <p id="hero-tagline">
+        Backend Software Engineer with 4+ years across Java, Kotlin and Spring Boot.<br>
+        Building APIs, modernising systems and exploring applied AI — based in Dublin.
       </p>
-    </div>
-  </div>
 
-  <div class="informations">
-    <div class="informationsTitle" data-aos="fade-up">
-      <h1>Technical Expertise</h1>
-    </div>
-
-    <div class="informationsMain">
-      <p data-aos="fade-up">
-        Java Spring: Over 4 years of hands-on experience developing backend services and RESTful APIs. <br/>
-        Kotlin Spring: Proficient in building modern, concise applications using Kotlin with Spring Boot for over 2 years. <br>
-        Angular: Extensive knowledge of Angular for frontend development, honed over 2 years. <br>
-        React: Experience in developing dynamic and responsive user interfaces with React for over a year. <br>
-        Thymeleaf and JSP: Skilled in server-side templating technologies, including Thymeleaf and JSP, for over 2 years. <br>
-      </p>
-    </div>
-  </div>
-
-  <div class="informations">
-    <div class="informationsTitle" data-aos="fade-up">
-      <h1>Professional Background</h1>
-    </div>
-
-    <div class="informationsMain">
-      <p data-aos="fade-up">
-        My journey includes contributing to critical projects with prestigious organizations such as the Brazilian Army and Banco do Brasil, the largest bank in Brazil. This experience has equipped me with the ability to deliver high-quality software solutions that meet stringent requirements and security standards.
-      </p>
-    </div>
-  </div>
-
-  <div class="informations">
-    <div class="informationsTitle" data-aos="fade-up">
-      <h1>Language Skills</h1>
-    </div>
-
-    <div class="informationsMain">
-      <p data-aos="fade-up">
-        I am fluent in Portuguese and proficient in English, enabling me to collaborate effectively with diverse teams and stakeholders worldwide.
-      </p>
-    </div>
-  </div>
-
-  <div class="informations">
-    <div class="informationsTitle" data-aos="fade-up">
-      <h1>Why Work With Me?</h1>
-    </div>
-
-    <div class="informationsMain">
-      <p data-aos="fade-up">
-        I am committed to staying updated with the latest technologies and best practices in software development. My goal is to leverage my skills and experience to deliver exceptional results and exceed expectations.
-      </p>
-    </div>
-  </div>
-
-  <div id="skillsDiv">
-    <div id="techTitle" data-aos="fade-up">
-      <h3>Technologies I've Worked With</h3>
-    </div>
-    <div id="skillsMain">
-      <div class="techDiv" id="frontend" data-aos="fade-up">
-        <div class="techDivTitle">
-          Frontend
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/reactlogo2.png" alt="React" />
-          <span class="tooltiptext">React</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/angularlogo.png" alt="React" />
-          <span class="tooltiptext">Angular</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/htmllogo.png" alt="HTML" />
-          <span class="tooltiptext">HTML</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/csslogo.png" alt="CSS" />
-          <span class="tooltiptext">CSS</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/jquery.png" alt="jQuery" />
-          <span class="tooltiptext">jQuery</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/bootstraplogo.png" alt="Bootstrap" />
-          <span class="tooltiptext">Bootstrap</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/expo.png" alt="Expo">
-          <span class="tooltiptext">Expo</span>
-        </div>
+      <div id="hero-cta">
+        <a href="/assets/nathanrocharesumee.pdf" target="_blank" class="btn-primary">View Resume</a>
+        <a href="#contact" class="btn-ghost">Get in touch</a>
       </div>
 
-      <div class="techDiv" id="backend" data-aos="fade-up">
-        <div class="techDivTitle">
-          Backend
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/springlogo.png" alt="Node.js" />
-          <span class="tooltiptext">Spring</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/nodelogo.png" alt="Node.js" />
-          <span class="tooltiptext">Node.js</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/expresslogo2.png" alt="Express" />
-          <span class="tooltiptext">Express</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/sequelize.png" alt="Sequelize" />
-          <span class="tooltiptext">Sequelize</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/oraclelogo.png" alt="PostgreSQL" />
-          <span class="tooltiptext">Oracle SQL</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/postgreslogo.png" alt="PostgreSQL" />
-          <span class="tooltiptext">PostgreSQL</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/oauth.png" alt="OAuth" />
-          <span class="tooltiptext">OAuth</span>
-        </div>
-      </div>
+    </div>
+  </section>
 
-      <div class="techDiv" id="devops" data-aos="fade-up">
-        <div class="techDivTitle">
-          DevOps
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/gitlogo.png" alt="Git" />
-          <span class="tooltiptext">Git</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/githublogo.png" alt="Github" />
-          <span class="tooltiptext">Github</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/dockerlogo.png" alt="Git" />
-          <span class="tooltiptext">Docker</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/npm.png" alt="npm" />
-          <span class="tooltiptext">npm</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/jenkinslogo.png" alt="Webpack" />
-          <span class="tooltiptext">Jenkins</span>
-        </div>
-      </div>
-
-      <div class="techDiv" id="languages" data-aos="fade-up">
-        <div class="techDivTitle">
-          Languages
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/jslogo.png" alt="JavaScript" />
-          <span class="tooltiptext">JavaScript</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/java.png" alt="Java" />
-          <span class="tooltiptext">Java</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/kotlinlogo.png" alt="JavaScript" />
-          <span class="tooltiptext">Kotlin</span>
-        </div>
-      </div>
-
-      <div class="techDiv" id="tools" data-aos="fade-up">
-        <div class="techDivTitle">
-          Tools
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/intellijlogo.png" alt="intellig" />
-          <span class="tooltiptext">IntelliJ</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/vscode.png" alt="VS Code" />
-          <span class="tooltiptext">VS Code</span>
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/postman.png" alt="Postman" />
-          <span class="tooltiptext">Postman</span>
-        </div>
-      </div>
-
-      <div class="techDiv" id="testing" data-aos="fade-up">
-        <div class="techDivTitle">
-          Testing
-        </div>
-        <div class="tech tooltip">
-          <img src="/assets/tech/junitlogo.png" alt="JUnit" />
-          <span class="tooltiptext">JUnit</span>
-        </div>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <h2 class="section-label" data-aos="fade-up">About</h2>
+      <div class="section-body" data-aos="fade-up" data-aos-delay="80">
+        <p>
+          I'm a backend-focused engineer with experience building and maintaining enterprise systems across legal, finance and public-sector environments. My core stack is Java, Kotlin and Spring Boot — I've worked across the full backend lifecycle, from REST API design and third-party integrations to CI/CD pipelines, legacy migrations and stakeholder-facing delivery.
+        </p>
+        <p>
+          I also have front-end range — Angular, React and Thymeleaf — and I'm expanding into applied AI. I'm currently completing an MSc in Artificial Intelligence at Dublin Business School, and building RAG pipelines and AI-enabled tooling on the side.
+        </p>
+        <p>
+          Previous work includes a platform for AI developers at Banco do Brasil (IBM), legal workflow systems at Daniel Law, and enterprise government tooling for the Brazilian Army. I'm comfortable moving between problem domains and I care about code that's maintainable, well-tested and easy to hand over.
+        </p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div id="resume">
-    <div id="resumeTitle" data-aos="fade-up">
-      <h1>Resume</h1>
-    </div>
-    <div id="resumeMain" data-aos="fade-up">
-      <a id="resumeView" href="/assets/nathanrocharesumee.pdf" target="_blank">View Resume
-        <img src="/assets/viewfile.png" />
-      </a>
-      <a id="resumeDownload" href="/assets/nathanrocharesumee.pdf" download>Download Resume
-        <img src="/assets/download.png" />
-      </a>
-    </div>
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-inner">
+      <h2 class="section-label" data-aos="fade-up">Experience</h2>
+      <div class="timeline" data-aos="fade-up" data-aos-delay="80">
 
-  </div>
-  <div id="contact">
-    <div id="contactTitle" data-aos="fade-up">
-      <h1>Contact</h1>
-      <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" data-aos="fade-up">
-        <div class="hidden">
-          <label>Fill this if you are not human: <input name="bot-field" /></label>
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">Aug 2022 – Feb 2024</span>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Software Developer</h3>
+              <span class="timeline-company">Daniel Law &middot; Rio de Janeiro, Brazil</span>
+            </div>
+            <p>Modernised internal legal workflow systems, migrating legacy JSP and Thymeleaf modules to Spring-based services and React interfaces. Designed and evolved backend APIs, business logic, and reporting solutions built on Oracle, JasperReports, Jenkins and AWS CodePipeline. Worked directly with business stakeholders across agile delivery cycles.</p>
+          </div>
         </div>
-        <div class="group">
-          <input type="text" name="name" required="required" /><span class="highlight"></span><span class="bar"></span>
-          <label>Name</label>
-        </div>
-        <div class="group">
-          <input type="text" name="email" required="required" /><span class="highlight"></span><span class="bar"></span>
-          <label>Email</label>
-        </div>
-        <div class="group">
-          <textarea type="textarea" name="message" rows="5" required="required"></textarea><span
-            class="highlight"></span><span class="bar"></span>
-          <label>Message</label>
-        </div>
-        <div class="btn-box">
-          <button class="btn btn-submit" type="submit">Send Message<img src="assets/paper-plane.png"></button>
-        </div>
-      </form>
-    </div>
-  </div>
 
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">Oct 2021 – Jul 2022</span>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Full Stack Developer</h3>
+              <span class="timeline-company">IBM &middot; Banco do Brasil Engagement, Brazil</span>
+            </div>
+            <p>Delivered features for a platform supporting AI developers at Banco do Brasil, using Java Quarkus, Angular and Oracle DB. Built a Python/Flask tool to analyse Jupyter notebooks and help teams understand AI experiment artefacts. Improved code quality through unit testing, componentisation and targeted refactoring.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">Nov 2020 – Sep 2021</span>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Full Stack Developer</h3>
+              <span class="timeline-company">Basis Tecnologia &middot; Brazilian Army / Sisgcorp, Brazil</span>
+            </div>
+            <p>Built features, integrations and refactors for Sisgcorp, an enterprise resource system used by Brazilian Army stakeholders. Backend and frontend work across Java Spring, Angular, Oracle and Elasticsearch. Set up Jenkins CI/CD pipelines and Liquibase database migrations, reducing deployment risk.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">Jun 2019 – Nov 2020</span>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Teaching Assistant — Programming I</h3>
+              <span class="timeline-company">Unifacisa Centro Universitário, Brazil</span>
+            </div>
+            <p>Supported students in introductory Python programming, debugging and logic fundamentals. Ran lab sessions and one-to-one code reviews focused on building solid programming habits from the ground up.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="section-inner">
+      <h2 class="section-label" data-aos="fade-up">Skills</h2>
+      <div class="skills-grid" data-aos="fade-up" data-aos-delay="80">
+
+        <div class="skill-group">
+          <h4>Backend</h4>
+          <div class="skill-tags">
+            <span>Java</span><span>Kotlin</span><span>Spring Boot</span>
+            <span>Spring MVC</span><span>Quarkus</span><span>REST APIs</span><span>Microservices</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Frontend</h4>
+          <div class="skill-tags">
+            <span>React</span><span>Angular</span><span>TypeScript</span>
+            <span>JavaScript</span><span>Thymeleaf</span><span>JSP</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Data &amp; Search</h4>
+          <div class="skill-tags">
+            <span>Oracle DB</span><span>PostgreSQL</span><span>SQL</span>
+            <span>Elasticsearch</span><span>SQLite</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>DevOps &amp; Cloud</h4>
+          <div class="skill-tags">
+            <span>AWS</span><span>Docker</span><span>Jenkins</span>
+            <span>CI/CD</span><span>Git</span><span>Liquibase</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>AI &amp; Data Engineering</h4>
+          <div class="skill-tags">
+            <span>Python</span><span>RAG</span><span>ChromaDB</span>
+            <span>FastAPI</span><span>Flask</span><span>Ollama</span><span>PyMuPDF</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <h2 class="section-label" data-aos="fade-up">Projects</h2>
+      <div class="projects-grid" data-aos="fade-up" data-aos-delay="80">
+
+        <div class="project-card">
+          <h3>Academic RAG Assistant</h3>
+          <p>Local-first Streamlit application for uploading academic PDFs, extracting structured literature-review data and asking grounded questions over papers using a local RAG pipeline.</p>
+          <div class="project-tags">
+            <span>Python</span><span>Streamlit</span><span>Ollama</span>
+            <span>ChromaDB</span><span>RAG</span><span>PyMuPDF</span>
+          </div>
+          <a href="https://github.com/nathanlcr" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Atenas — AI Study Planner</h3>
+          <p>Local-first academic planning assistant for working students. Combines class schedules, work shifts and assignment deadlines into weekly study plans, with a Telegram bot interface and HTMX dashboard.</p>
+          <div class="project-tags">
+            <span>Python</span><span>FastAPI</span><span>SQLite</span>
+            <span>Telegram</span><span>HTMX</span><span>Pydantic</span>
+          </div>
+          <a href="https://github.com/nathanlcr" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section class="section" id="resume">
+    <div class="section-inner">
+      <h2 class="section-label" data-aos="fade-up">Resume</h2>
+      <div class="resume-actions" data-aos="fade-up" data-aos-delay="80">
+        <a href="/assets/nathanrocharesumee.pdf" target="_blank" class="btn-primary">View Resume</a>
+        <a href="/assets/nathanrocharesumee.pdf" download class="btn-ghost">Download</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-inner">
+      <h2 class="section-label" data-aos="fade-up">Contact</h2>
+      <div class="contact-wrapper" data-aos="fade-up" data-aos-delay="80">
+        <p class="contact-intro">
+          Open to backend, full-stack and AI-adjacent engineering roles in Ireland and remotely. Drop me a message below or reach out directly at <a href="mailto:nathanrochadev@gmail.com">nathanrochadev@gmail.com</a>.
+        </p>
+        <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+          <div class="hidden">
+            <label>Skip this: <input name="bot-field" /></label>
+          </div>
+          <div class="form-group">
+            <input type="text" name="name" required placeholder=" " />
+            <label>Name</label>
+            <span class="form-bar"></span>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" required placeholder=" " />
+            <label>Email</label>
+            <span class="form-bar"></span>
+          </div>
+          <div class="form-group">
+            <textarea name="message" rows="5" required placeholder=" "></textarea>
+            <label>Message</label>
+            <span class="form-bar"></span>
+          </div>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <div id="footer-links">
-      <a href="mailto:nathanrochadev@gmail.com"
-        onmouseover="this.href=this.href.replace(/[zyx]/g,'');" target="_blank">
-        <img src="assets/email.png">
-      </a>
-      <a href="https://www.linkedin.com/in/nathan-rocha-446b5b185/" target="_blank">
-        <img src="assets/linkedin.png">
-      </a>
-      <a href="https://github.com/nathanlcr" target="_blank">
-        <img src="assets/github3.png">
-      </a>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="mailto:nathanrochadev@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/nathanlcr" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="https://github.com/nathanlcr" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+            <path d="M9 18c-4.51 2-5-2-7-2"/>
+          </svg>
+        </a>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> Nathan Lúcio. All rights reserved.</p>
     </div>
-    <div id="copyright">&#169; <span id="year"></span> Nathan Lúcio. All rights reserved.</div>
   </footer>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script type="text/javascript" src="/main.js"></script>
-
+  <script src="/textscramble.js"></script>
+  <script src="/main.js"></script>
 </body>
-
 </html>
