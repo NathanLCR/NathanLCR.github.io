@@ -1,94 +1,89 @@
+/* ── AOS ─────────────────────────────────────────────── */
 AOS.init({
-  duration: 1000,
-  easing: "ease",
-  mirror: false,
-  disable: "mobile",
-  once: true
+  duration: 700,
+  easing: 'ease-out',
+  once: true,
+  disable: 'mobile'
 });
 
+/* ── Nav: mobile slide ───────────────────────────────── */
 const navSlide = () => {
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".nav-links");
-  const navLinksLi = document.querySelectorAll(".nav-links li");
-  const navLinksA = document.querySelectorAll(".nav-links a");
+  const burger     = document.querySelector('.burger');
+  const nav        = document.querySelector('.nav-links');
+  const navLinksLi = document.querySelectorAll('.nav-links li');
+  const navLinksA  = document.querySelectorAll('.nav-links a');
 
-  burger.addEventListener("click", () => {
-    // Toggle Nav
-    nav.classList.toggle("nav-active");
-
-    // Animate Links
-    navLinksLi.forEach((link, index) => {
-      if (link.style.animation) {
-        link.style.animation = "";
-      } else {
-        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 15 +
-          0.5}s`;
-      }
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('nav-active');
+    navLinksLi.forEach((link, i) => {
+      link.style.animation = link.style.animation
+        ? ''
+        : `navLinkFade 0.4s ease forwards ${i * 0.06 + 0.15}s`;
     });
-    // Burger Animation
-    burger.classList.toggle("toggle");
+    burger.classList.toggle('toggle');
   });
 
   navLinksA.forEach(link =>
-    link.addEventListener("click", () => {
-      if (nav.classList.contains("nav-active")) {
-        // Close Navbar when Anchor tags are clicked
-        nav.classList.remove("nav-active");
-
-        burger.classList.toggle("toggle");
-
-        // Remove Style for each link
-        navLinksLi.forEach(link => {
-          link.style.animation = "";
-        });
+    link.addEventListener('click', () => {
+      if (nav.classList.contains('nav-active')) {
+        nav.classList.remove('nav-active');
+        burger.classList.remove('toggle');
+        navLinksLi.forEach(l => { l.style.animation = ''; });
       }
     })
   );
 };
-
 navSlide();
 
-// index of each deck, initialized to first slide for each deck
-let slideIndex = [1, 1, 1];
+/* ── Nav: scroll shadow ──────────────────────────────── */
+const navEl = document.querySelector('nav');
+const onScroll = () => {
+  navEl.classList.toggle('scrolled', window.scrollY > 10);
+};
+window.addEventListener('scroll', onScroll, { passive: true });
 
-let slideId = ["recipixSlides", "raceSlides", "botSlides"];
-let dotId = ["recipixDots", "raceDots", "botDots"];
-showSlides(1, 0);
-showSlides(1, 1);
-showSlides(1, 2);
+/* ── Timeline: staggered reveal ─────────────────────── */
+const timelineItems = document.querySelectorAll('.timeline-item');
+const timelineObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const items = entry.target.querySelectorAll('.timeline-item');
+      items.forEach((item, i) => {
+        setTimeout(() => item.classList.add('visible'), i * 120);
+      });
+      timelineObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
 
-// Next/previous controls
-function plusSlides(n, no) {
-  showSlides((slideIndex[no] += n), no);
+const timelineContainer = document.querySelector('.timeline');
+if (timelineContainer) timelineObserver.observe(timelineContainer);
+
+/* ── Skills: staggered tag reveal ───────────────────── */
+const skillGroups = document.querySelectorAll('.skill-group');
+const skillObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const tags = entry.target.querySelectorAll('.skill-tags span');
+      tags.forEach((tag, i) => {
+        tag.style.transitionDelay = `${i * 55}ms`;
+        setTimeout(() => tag.classList.add('visible'), i * 55);
+      });
+      skillObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+skillGroups.forEach(group => skillObserver.observe(group));
+
+/* ── Text scramble on "ENGINEER" ────────────────────── */
+const scrambleEl = document.getElementById('scramble-target');
+if (scrambleEl && typeof TextScramble !== 'undefined') {
+  const fx = new TextScramble(scrambleEl);
+  setTimeout(() => {
+    fx.setText('ENGINEER');
+  }, 900);
 }
 
-// Thumbnail image controls
-function currentSlide(n, no) {
-  showSlides((slideIndex[no] = n), no);
-}
-
-function showSlides(n, no) {
-  let x = document.getElementsByClassName(slideId[no]);
-  let dots = document.getElementsByClassName(dotId[no]);
-  if (n > x.length) {
-    slideIndex[no] = 1;
-  }
-  if (n < 1) {
-    slideIndex[no] = x.length;
-  }
-  for (let i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-
-  x[slideIndex[no] - 1].style.display = "block";
-  dots[slideIndex[no] - 1].className += " active";
-}
-
-let date = new Date();
-let year = date.getFullYear();
-let yearSpan = document.getElementById("year");
-yearSpan.textContent = year;
+/* ── Year ────────────────────────────────────────────── */
+document.getElementById('year').textContent = new Date().getFullYear();

@@ -1,9 +1,7 @@
 class TextScramble {
   constructor(el) {
     this.el = el;
-    this.chars = "!@$%&()<>-_\\/[]{}—=+*^?#________abcdefghijklmnopqrstuvwxyz";
-    // this.chars = "!<>-_\\/[]{}—=+*^?#________";
-
+    this.chars = '!@$%&<>-_\\/[]{}=+*^?#________';
     this.update = this.update.bind(this);
   }
   setText(newText) {
@@ -12,10 +10,10 @@ class TextScramble {
     const promise = new Promise(resolve => (this.resolve = resolve));
     this.queue = [];
     for (let i = 0; i < length; i++) {
-      const from = oldText[i] || "";
-      const to = newText[i] || "";
-      const start = Math.floor(Math.random() * 40);
-      const end = start + Math.floor(Math.random() * 40);
+      const from = oldText[i] || '';
+      const to   = newText[i] || '';
+      const start = Math.floor(Math.random() * 20);
+      const end   = start + Math.floor(Math.random() * 20);
       this.queue.push({ from, to, start, end });
     }
     cancelAnimationFrame(this.frameRequest);
@@ -24,8 +22,7 @@ class TextScramble {
     return promise;
   }
   update() {
-    let output = "";
-    let complete = 0;
+    let output = '', complete = 0;
     for (let i = 0, n = this.queue.length; i < n; i++) {
       let { from, to, start, end, char } = this.queue[i];
       if (this.frame >= end) {
@@ -53,33 +50,3 @@ class TextScramble {
     return this.chars[Math.floor(Math.random() * this.chars.length)];
   }
 }
-
-const phrases = [
-  // "Hello! 👋🏽",
-  // "My name is Chris. ",
-  // "I'm a software engineer. 👨🏽‍💻",
-  // "I develop websites 🖥️ 💻, ",
-  // "mobile apps 📱, ",
-  // "and video games 🎮. ",
-  // ""
-  // "Hello!",
-  // "My name is Chris.",
-  "I'm a software engineer.",
-  "I develop websites,",
-  "mobile apps,",
-  "and video games.",
-  ""
-];
-
-const el = document.querySelector(".text");
-const fx = new TextScramble(el);
-
-let counter = 0;
-const next = () => {
-  fx.setText(phrases[counter]).then(() => {
-    setTimeout(next, 1200);
-  });
-  counter = (counter + 1) % phrases.length;
-};
-
-next();
