@@ -309,8 +309,6 @@ nav.scrolled {
   gap: 28px;
   padding: 28px 0;
   border-bottom: 1px solid var(--border-l);
-  transition: opacity 0.2s;
-  /* stagger set via JS */
   opacity: 0;
   transform: translateY(12px);
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -380,7 +378,6 @@ nav.scrolled {
   opacity: 0;
   transform: translateY(6px);
   transition: border-color 0.18s, color 0.18s, opacity 0.4s ease, transform 0.4s ease;
-  /* delay applied via JS */
 }
 .skill-tags span.visible {
   opacity: 1;
