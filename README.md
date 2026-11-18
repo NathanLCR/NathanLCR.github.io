@@ -1,4 +1,4 @@
-# Nathan Lúcio — Portfolio
+# Nathan Lúcio Rocha — Portfolio
 
 Static engineering portfolio and interactive local-model evaluation explorer at [nathanlcr.github.io](https://nathanlcr.github.io).
 

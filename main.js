@@ -60,7 +60,7 @@
   const copyFeedback = document.getElementById("copy-feedback");
   if (copyBtn && copyFeedback) {
     copyBtn.addEventListener("click", async () => {
-      const email = "nathan.lucio13@gmail.com";
+      const email = "nathanrochadev@gmail.com";
       let copied = false;
       if (navigator.clipboard && navigator.clipboard.writeText) {
         try {
