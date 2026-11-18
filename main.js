@@ -408,8 +408,8 @@
 
     const drawScatterSvg = (uc, axis) => {
       const W = 760;
-      const H = 268;
-      const pad = { top: 24, right: 32, bottom: 42, left: 56 };
+      const H = 276;
+      const pad = { top: 24, right: 44, bottom: 42, left: 56 };
       const plotW = W - pad.left - pad.right;
       const plotH = H - pad.top - pad.bottom;
 
@@ -503,15 +503,22 @@
       const placedBoxes = [];
       const dotCoords = valid.map((s) => {
         const xv = axis === "speed" ? s.med_tok_s : s.peak_rss_gb;
-        return { s, cx: xAt(xv), cy: yAt(s.pass_pct) };
+        return {
+          s,
+          cx: xAt(xv),
+          cy: yAt(s.pass_pct),
+          yHi: yAt(s.ci_high_pct),
+          yLo: yAt(s.ci_low_pct),
+        };
       });
 
       const overlaps = (box) => {
-        if (box.x1 < pad.left + 4 || box.x2 > W - 6 || box.y1 < pad.top + 2 || box.y2 > H - pad.bottom - 4) {
+        if (box.x1 < pad.left + 4 || box.x2 > W - 4 || box.y1 < 6 || box.y2 > H - pad.bottom - 2) {
           return true;
         }
         for (const p of dotCoords) {
-          if (p.cx >= box.x1 - 10 && p.cx <= box.x2 + 10 && p.cy >= box.y1 - 10 && p.cy <= box.y2 + 10) {
+          // Reject any box intersecting a setup's vertical CI whisker [yHi, yLo] or dot
+          if (!(box.x2 < p.cx - 8 || box.x1 > p.cx + 8 || box.y2 < p.yHi - 5 || box.y1 > p.yLo + 5)) {
             return true;
           }
         }
@@ -523,9 +530,7 @@
         return false;
       };
 
-      dotCoords.forEach(({ s, cx, cy }) => {
-        const yLo = yAt(s.ci_low_pct);
-        const yHi = yAt(s.ci_high_pct);
+      dotCoords.forEach(({ s, cx, cy, yHi, yLo }) => {
         const isSel = s.setup === selectedSetup;
         const color = setupColor(s, uc.id);
 
@@ -557,18 +562,21 @@
 
         const textStr = `${s.setup} (${s.pass_pct}%)`;
         const estW = textStr.length * 6.7;
-        const estH = 14;
         const candidates = [
-          { dx: 10, dy: -6, anchor: "start" },
-          { dx: -10, dy: -6, anchor: "end" },
-          { dx: 10, dy: 15, anchor: "start" },
-          { dx: -10, dy: 15, anchor: "end" },
-          { dx: 12, dy: -24, anchor: "start" },
-          { dx: -12, dy: -24, anchor: "end" },
-          { dx: 12, dy: 30, anchor: "start" },
-          { dx: -12, dy: 30, anchor: "end" },
-          { dx: 0, dy: -16, anchor: "middle" },
-          { dx: 0, dy: 24, anchor: "middle" },
+          { dx: 12, dy: -4, anchor: "start" },
+          { dx: -12, dy: -4, anchor: "end" },
+          { dx: 12, dy: 14, anchor: "start" },
+          { dx: -12, dy: 14, anchor: "end" },
+          { dx: 14, dy: -22, anchor: "start" },
+          { dx: -14, dy: -22, anchor: "end" },
+          { dx: 14, dy: 30, anchor: "start" },
+          { dx: -14, dy: 30, anchor: "end" },
+          { dx: 0, dy: yHi - cy - 10, anchor: "middle" },
+          { dx: 0, dy: yLo - cy + 16, anchor: "middle" },
+          { dx: 24, dy: -36, anchor: "start" },
+          { dx: -24, dy: -36, anchor: "end" },
+          { dx: 24, dy: 42, anchor: "start" },
+          { dx: -24, dy: 42, anchor: "end" },
         ];
 
         let chosen = candidates[0];
@@ -585,8 +593,8 @@
           }
         }
         if (!chosenBox) {
-          const lx = Math.max(pad.left + 8, Math.min(W - estW - 8, cx + 10));
-          const ly = Math.max(pad.top + 14, Math.min(H - pad.bottom - 8, cy - 8));
+          const lx = Math.max(pad.left + 8, Math.min(W - estW - 8, cx - estW - 14));
+          const ly = Math.max(18, Math.min(H - pad.bottom - 8, cy));
           chosen = { dx: lx - cx, dy: ly - cy, anchor: "start" };
           chosenBox = { x1: lx, y1: ly - 11, x2: lx + estW, y2: ly + 3 };
         }
@@ -594,12 +602,13 @@
 
         const lx = cx + chosen.dx;
         const ly = cy + chosen.dy;
-        if (Math.hypot(chosen.dx, chosen.dy) > 18) {
+        if (chosen.dx !== 0 && Math.hypot(chosen.dx, chosen.dy) > 20) {
+          const targetX = chosen.anchor === "end" ? lx + 2 : chosen.anchor === "start" ? lx - 2 : lx;
           chartSvg.appendChild(
             svgEl("line", {
               x1: cx,
               y1: cy,
-              x2: lx,
+              x2: targetX,
               y2: ly - 4,
               stroke: "var(--rule-strong)",
               "stroke-width": 1,
