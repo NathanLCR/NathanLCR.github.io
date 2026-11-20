@@ -44,7 +44,7 @@
           Backend engineer who builds AI systems and measures whether they work. Finishing an <strong>MSc in Artificial Intelligence</strong> in Dublin (Jan 2027) after 4+ years building Java, Kotlin, Spring, and cloud backends for <strong>Banco do Brasil</strong> (via IBM), the <strong>Brazilian Army</strong>, and <strong>Daniel Law</strong>. Recent work: agents with policy engines outside the model, RAG that checks its own citations, and statistical evaluation of small models on a 16 GB Mac.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#systems">Explore 6 Systems</a>
+          <a class="btn btn-primary" href="#systems">Explore 7 Systems</a>
           <a class="btn" href="#eval-explorer">Interactive Eval Explorer</a>
           <a class="btn" href="cv.html">Printable CV</a>
           <a class="btn" href="https://github.com/NathanLCR" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -54,7 +54,7 @@
         <div class="notebook-strip" aria-label="Engineering overview">
           <div class="strip-cell">
             <div class="strip-label">Selected Work</div>
-            <div class="strip-value">6 Local-First Systems</div>
+            <div class="strip-value">7 Local-First Systems</div>
           </div>
           <div class="strip-cell">
             <div class="strip-label">Eval Hardware</div>
@@ -122,7 +122,7 @@
         <div class="section-head">
           <div>
             <p class="section-kicker">Selected Systems</p>
-            <h2>Six Local-First Tools &amp; Harnesses</h2>
+            <h2>Seven Local-First Tools &amp; Harnesses</h2>
             <p class="section-lead">
               Every project below solves a specific workflow problem locally on a Mac without relying on opaque wrappers. Click any screenshot to inspect it at full size.
             </p>
@@ -381,6 +381,59 @@
               <div class="media-caption">Live macOS detail card showing ChatGPT/Codex remaining window and daily local activity.</div>
             </div>
           </article>
+
+          <!-- 07: lecture-rag -->
+          <article class="project-card" id="proj-lecturerag">
+            <div>
+              <div class="project-index">07 / CONTROLLED RAG ABLATION</div>
+              <div class="project-header">
+                <h3>lecture-rag</h3>
+                <a class="project-repo" href="https://github.com/NathanLCR/lecture-rag" target="_blank" rel="noopener noreferrer">github.com/NathanLCR/lecture-rag &rarr;</a>
+              </div>
+              <p class="project-summary">
+                MSc NLP capstone: a local RAG study assistant evaluated as a staged ablation study that cites lecture minutes and abstains when the material does not cover the question.
+              </p>
+              <ul class="project-points">
+                <li><strong>No vector database, no LangChain:</strong> ~418 chunks &times; 384 dims sit in a 627 KiB normalized NumPy matrix using dot-product retrieval, paired with direct Ollama HTTP calls and <code>sentence-transformers</code>.</li>
+                <li><strong>Refuses unanswerable prompts:</strong> Abstained on <strong>15/15</strong> unanswerable gold questions, compared to <strong>0/15</strong> from the same generator run closed-book.</li>
+                <li><strong>Staged ablation &amp; frozen demo config:</strong> Achieved 0.841 Recall@5 (fixed chunks + dense BGE) and +0.043 token-F1 over closed-book (0.366 vs 0.323, paired bootstrap 95% CI excluding 0 across 60 gold questions).</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tech-tag">Python &amp; NumPy</span>
+                <span class="tech-tag">Ollama &amp; Gemma</span>
+                <span class="tech-tag">BGE &amp; BM25</span>
+                <span class="tech-tag">RAGAS</span>
+              </div>
+            </div>
+            <div class="project-media">
+              <div class="mini-arch-card">
+                <div>
+                  <div class="section-kicker" style="margin-bottom:8px;">60-Question Ablation Study</div>
+                  <div class="mini-metric-grid">
+                    <div class="mini-stat">
+                      <div class="mini-stat-label">Unanswerable Refused</div>
+                      <div class="mini-stat-val">15/15 <span style="font-size:0.78rem;color:var(--ink-faint);">closed-book: 0/15</span></div>
+                    </div>
+                    <div class="mini-stat">
+                      <div class="mini-stat-label">Best Recall@5</div>
+                      <div class="mini-stat-val">0.841 <span style="font-size:0.78rem;color:var(--ink-faint);">fixed + dense BGE</span></div>
+                    </div>
+                    <div class="mini-stat">
+                      <div class="mini-stat-label">Token-F1 Gain</div>
+                      <div class="mini-stat-val">+0.043 <span style="font-size:0.78rem;color:var(--ink-faint);">95% CI excludes 0</span></div>
+                    </div>
+                    <div class="mini-stat">
+                      <div class="mini-stat-label">Vector Index Size</div>
+                      <div class="mini-stat-val">627 KiB <span style="font-size:0.78rem;color:var(--ink-faint);">NumPy array</span></div>
+                    </div>
+                  </div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-top:8px;border-top:1px solid var(--rule);">
+                  <span class="mono" style="font-size:0.76rem;color:var(--ink-faint);">Also: <a href="https://github.com/NathanLCR/paper3" target="_blank" rel="noopener noreferrer">paper3</a> &mdash; local-first reader for academic PDFs</span>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -450,7 +503,7 @@
             <p class="section-kicker">Curriculum Vitae</p>
             <h3>Printable Engineering CV</h3>
             <p>
-              Clean single-page summary covering Dublin availability (Q1 2027), MSc AI (Jan 2027), 4+ years of JVM/Python experience, and the six systems above—formatted to save directly to PDF via browser print.
+              Clean single-page summary covering Dublin availability (Q1 2027), MSc AI (Jan 2027), 4+ years of JVM/Python experience, and the seven systems above—formatted to save directly to PDF via browser print.
             </p>
             <div class="contact-row">
               <a class="btn btn-primary" href="cv.html">Open Printable CV</a>
